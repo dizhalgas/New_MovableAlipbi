@@ -5,11 +5,10 @@ struct MainTabView: View {
     @State private var isMainPageActive: Bool = false
     
     var body: some View {
-        
-        
         NavigationView {
             GeometryReader{ geometry in
                 ZStack{
+                    //Background gradient
                     LinearGradient(
                         gradient: Gradient(colors: [Color(hex: 0xD9E6FF), Color(hex: 0xFEC498)]),
                         startPoint: .topLeading,
@@ -17,14 +16,17 @@ struct MainTabView: View {
                     )
                     .edgesIgnoringSafeArea(.all)
                     
+                    // Sidebar content
                     VStack(alignment: .leading, spacing: 0) {
-                        //title
+                        //Title
                         Text("Movable Alipbi")
                             .textCase(.none)
                             .font(.title)
                             .bold()
                             .foregroundColor((Color(hex: 0x8fb108)))
+                            .padding(15)
                         
+                        //Navigation links
                         NavigationLink(
                             destination: MainPageView(),
                             tag: "Main Page",
@@ -65,7 +67,7 @@ struct MainTabView: View {
                 }
                 .navigationBarHidden(true)
                 .frame(width: 386)
-//                .frame(width: min(geometry.size.width, 250))
+//                .frame(width: min(geometry.size.width, 320))
             }
         }
         .environment(\.font, Font.custom("Poppins", size: 18))

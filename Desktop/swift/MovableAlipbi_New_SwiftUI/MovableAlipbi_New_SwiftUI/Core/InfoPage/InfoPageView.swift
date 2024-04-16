@@ -1,15 +1,26 @@
-//
-//  InfoPageView.swift
-//  MovableAlipbi_New_SwiftUI
-//
-//  Created by Dilyara Zhalgasbayeva on 2/19/24.
-//
 
 import SwiftUI
 
 struct InfoPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            DescriptionView()
+                .padding(.bottom, 40)
+            VStack{
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: 0xD9E6FF), Color(hex: 0xFEC498)]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ))
+                    .frame(width: 402, height: 325)
+                    .overlay(
+                        ActivityView()
+                    )
+            }
+        }
+
     }
 }
 

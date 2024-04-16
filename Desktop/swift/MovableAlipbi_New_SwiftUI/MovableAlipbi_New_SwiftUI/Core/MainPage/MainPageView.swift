@@ -5,7 +5,8 @@ struct MainPageView: View {
         //kid profile
         ZStack{
             UpperView()
-//                .padding(.top, 20)
+                .padding(.bottom, 800)
+            BottomView()
         }
         
         //parent profile

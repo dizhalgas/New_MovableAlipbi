@@ -1,15 +1,39 @@
-//
-//  AnalysisPageView.swift
-//  MovableAlipbi_New_SwiftUI
-//
-//  Created by Dilyara Zhalgasbayeva on 2/19/24.
-//
 
 import SwiftUI
 
 struct AnalysisPageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            VStack{
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: 0xD9E6FF), Color(hex: 0xFEC498)]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ))
+                    .frame(width: 544, height: 450)
+                    .overlay(
+                        UpperAnalysis()
+                    )
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color(hex: 0xD9E6FF), Color(hex: 0xFEC498)]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ))
+                    .frame(width: 544, height: 370)
+                    .overlay(
+                        AnalysisTable()
+                            .frame(width: 500, height: 322)
+                        , alignment: .top
+                    )
+            }
+            
+            CalendarView()
+        }
     }
 }
 

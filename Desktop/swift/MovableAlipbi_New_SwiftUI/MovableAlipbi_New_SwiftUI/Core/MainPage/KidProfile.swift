@@ -21,8 +21,9 @@ struct KidProfile: View {
                                 .font(.custom("Poppins", size: 10))
                                 .foregroundColor(Color(hex: 0x434343))
                             
-                            //stop button
+                            //Stop + pause
                             HStack{
+                                //stop button
                                 Button(action: {
                                     // to stop time
                                 }) {
@@ -54,6 +55,7 @@ struct KidProfile: View {
                             }
                         }
                     }
+                    .padding(.horizontal, 20)
                     VStack{
                         ProfileChange()
                     }
