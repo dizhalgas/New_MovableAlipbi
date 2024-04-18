@@ -10,7 +10,7 @@ struct CalendarView: View {
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 ))
-            .frame(width: 440, height: 987)
+            .frame(width: 440, height: 1115)
             .overlay(
                 VStack (alignment: .center) {
                     Text("Профиль Ребенка")

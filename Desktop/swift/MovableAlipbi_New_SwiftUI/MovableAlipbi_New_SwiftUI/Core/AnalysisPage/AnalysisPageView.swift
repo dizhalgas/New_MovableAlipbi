@@ -12,10 +12,12 @@ struct AnalysisPageView: View {
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ))
-                    .frame(width: 544, height: 450)
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(width: 590, height: 480)
                     .overlay(
                         UpperAnalysis()
                     )
+
                 
                 RoundedRectangle(cornerRadius: 20)
                     .fill(
@@ -24,12 +26,13 @@ struct AnalysisPageView: View {
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ))
-                    .frame(width: 544, height: 370)
+                    .frame(width: 590, height: 500)
                     .overlay(
                         AnalysisTable()
-                            .frame(width: 500, height: 322)
+                            .frame(width: 500, height: 480)
                         , alignment: .top
                     )
+                    .edgesIgnoringSafeArea(.bottom)
             }
             
             CalendarView()

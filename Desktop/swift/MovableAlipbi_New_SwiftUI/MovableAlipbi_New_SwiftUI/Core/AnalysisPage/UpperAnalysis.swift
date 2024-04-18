@@ -11,8 +11,7 @@ struct UpperAnalysis: View {
     let progressValues = [
         ("Қысым", 0.7, Color(hex: 0xFF522C)),
         ("Тұрақтылық", 0.5, Color(hex: 0x8FB108)),
-        ("Жылдамдық", 0.8, Color(hex: 0x8B16FF)),
-        ("Градус", 0.4, Color(hex: 0xFF166A))
+        ("Жылдамдық", 0.8, Color(hex: 0x8B16FF))
     ]
     var body: some View {
         VStack(alignment: .leading) {
@@ -44,7 +43,7 @@ struct UpperAnalysis: View {
                         .padding(.vertical, 4)
                     }
                 }
-                .frame(width: 200, height: 245)
+                .frame(width: 260, height: 245)
                 .padding()
                 .background(Color.white)
                 .cornerRadius(12)
@@ -67,7 +66,7 @@ struct UpperAnalysis: View {
                         .font(.custom("Poppins", size: 20))
                         .fontWeight(.semibold)
                 }
-                .frame(width: 67, height: 68)
+                .frame(width: 70, height: 70)
                 .padding()
                 
                 Text("Орташа көрсеткіш")
