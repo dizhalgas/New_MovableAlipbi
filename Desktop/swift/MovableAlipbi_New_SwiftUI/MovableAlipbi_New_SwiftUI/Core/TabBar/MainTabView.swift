@@ -32,18 +32,17 @@ struct MainTabView: View {
                             tag: "Main Page",
                             selection: $selectedLink,
                             label: {
-                                Label("басты бет", systemImage: "house")
+                                Label("БАСТЫ БЕТ", systemImage: "house")
                                     .foregroundColor(selectedLink == "Main Page" ? Color(hex: 0x8fb108) : .primary)
                                     .padding()
                             }
                         )
-                        
                         NavigationLink(
                             destination: InfoPageView(),
                             tag: "Information",
                             selection: $selectedLink,
                             label: {
-                                Label("ақпараттар", systemImage: "face.smiling")
+                                Label("АҚПАРАТТАР", systemImage: "face.smiling")
                                     .foregroundColor(selectedLink == "Information" ? Color(hex: 0x8fb108) : .primary)
                                     .padding()
                             }
@@ -54,7 +53,7 @@ struct MainTabView: View {
                             tag: "Analysis",
                             selection: $selectedLink,
                             label: {
-                                Label("анализдер", systemImage: "chart.bar")
+                                Label("АНАЛИЗДЕР", systemImage: "chart.bar")
                                     .foregroundColor(selectedLink == "Analysis" ? Color(hex: 0x8fb108) : .primary)
                                     .padding()
                             }
@@ -70,8 +69,8 @@ struct MainTabView: View {
 //                .frame(width: min(geometry.size.width, 320))
             }
         }
-        .environment(\.font, Font.custom("Poppins", size: 18))
-        .textCase(.uppercase)
+        .environment(\.font, Font.custom("Poppins", size: 20))
+//        .textCase(.uppercase)
     }
 }
 

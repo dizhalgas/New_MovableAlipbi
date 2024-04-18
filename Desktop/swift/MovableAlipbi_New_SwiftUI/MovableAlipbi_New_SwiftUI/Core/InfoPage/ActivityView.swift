@@ -1,19 +1,19 @@
 import SwiftUI
 
 struct ActivityView: View {
-    @State private var selectedCategory: String = "all"
-    let categories = ["all", "жылдамдық", "градус", "қысым", "тұрақтылық"]
+    @State private var selectedCategory: String = "бәрі"
+    let categories = ["бәрі", "жылдамдық", "қысым", "тұрақтылық"]
     let activities = [
-        (title: "Гляделки", category: "жылдамдық", date: "Aug 17, 2023"),
-        (title: "Часики", category: "қысылм", date: "Aug 16, 2023"),
-        (title: "Гляделки", category: "тұрақтылық", date: "Aug 15, 2023"),
-        (title: "Репка", category: "градус", date: "Aug 13, 2023"),
-        (title: "Репка", category: "қысым", date: "Aug 13, 2023"),
-        (title: "Паучок", category: "жылдамдық", date: "Aug 17, 2023")
+        (title: "Тәтті бәліштер", category: "жылдамдық", date: "Aug 17, 2023"),
+        (title: "Шарлар", category: "қысым", date: "Aug 16, 2023"),
+        (title: "Cүңгуір қайық", category: "тұрақтылық", date: "Aug 15, 2023"),
+        (title: "Cүңгуір қайық", category: "тұрақтылық", date: "Aug 13, 2023"),
+        (title: "Шарлар", category: "қысым", date: "Aug 13, 2023"),
+        (title: "Тәтті бәліштер", category: "жылдамдық", date: "Aug 17, 2023")
     ]
     
     var filteredActivities: [(title: String, category: String, date: String)] {
-        if selectedCategory == "all" {
+        if selectedCategory == "бәрі" {
             return activities
         } else {
             return activities.filter { $0.category == selectedCategory }
@@ -63,7 +63,7 @@ struct ActivityView: View {
             .listStyle(InsetGroupedListStyle())
         }
         .padding()
-        .environment(\.font, Font.custom("Poppins", size: 12))
+        .environment(\.font, Font.custom("Poppins", size: 14))
     }
 }
 

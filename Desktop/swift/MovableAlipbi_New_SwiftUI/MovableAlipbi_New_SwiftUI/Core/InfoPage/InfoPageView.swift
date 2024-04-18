@@ -14,13 +14,13 @@ struct InfoPageView: View {
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ))
-                    .frame(width: 402, height: 325)
+                    .frame(width: 680, height: 500)
                     .overlay(
                         ActivityView()
                     )
             }
+            .padding(.bottom, 100)
         }
-
     }
 }
 
