@@ -9,7 +9,7 @@ struct UpperView: View {
         ZStack{
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color(hex: 0xF7F7F7))
-                .frame(width: 860, height: 142)
+                .frame(width: 1000, height: 142)
                 .overlay(
                     HStack(spacing: 390) {
                         KidProfile()

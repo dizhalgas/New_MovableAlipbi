@@ -6,11 +6,10 @@ struct BottomView: View {
     let imageData = [
         (name: "1", label: "Часики", subLabel: "Жылдамдық"),
         (name: "2", label: "Паучок", subLabel: "Қысым"),
-        (name: "3", label: "Игры С Мячом", subLabel: "Жылдамдық"),
-        (name: "4", label: "Имитация", subLabel: "Қысым")
+        (name: "3", label: "Игры С Мячом", subLabel: "Тұрақтылық"),
     ]
     
-    @State private var selectedButton: String?
+    @State private var selectedButton: String = "Бәрі"
     
     private func isSelected(_ buttonName: String) -> Bool {
         return selectedButton == buttonName
@@ -21,7 +20,7 @@ struct BottomView: View {
         VStack{
             //Title
             VStack (alignment: .leading) {
-                Text("  Ойындар")
+                Text(" Ойындар")
                     .font(.custom("Poppins", size: 32))
                     .font(.subheadline)
                     .bold()
@@ -30,7 +29,7 @@ struct BottomView: View {
                 
                 //Categorization of games
                 HStack(alignment: .firstTextBaseline){
-                    ForEach([" Бәрі", "Жылдамдық", "Градус", "Тұрақтылық", "Қысым"], id: \.self) { buttonName in
+                    ForEach(["Бәрі", "Жылдамдық", "Тұрақтылық", "Қысым"], id: \.self) { buttonName in
                         Button(action: {
                             self.selectedButton = buttonName
                         }) {
@@ -44,7 +43,9 @@ struct BottomView: View {
                 }
             }
             LazyVGrid(columns: [GridItem(.flexible(), spacing: 32), GridItem(.flexible(), spacing: 32)], spacing: 20) {
-                ForEach(imageData, id: \.name) { item in
+                ForEach(imageData.filter{
+                    self.selectedButton == "Бәрі" || $0.subLabel == self.selectedButton
+                }, id: \.name) { item in
                     VStack{
                         Image(item.name)
                             .resizable()
@@ -86,7 +87,6 @@ struct BottomView: View {
             }
             .padding(.horizontal, 196)
         }
-        
     }
 }
 
